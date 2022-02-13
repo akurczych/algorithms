@@ -5,7 +5,6 @@ import static java.lang.System.out;
 import java.util.Arrays;
 
 public class SelectionSort {
-
     public static int[] sort(final int[] numbers) {
     	out.format("            numbers %s \n", Arrays.toString(numbers));
     	final var result = numbers.clone();

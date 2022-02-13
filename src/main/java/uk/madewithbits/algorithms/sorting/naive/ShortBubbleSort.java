@@ -25,7 +25,6 @@ public class ShortBubbleSort {
             out.format("passNum %d: %s \n", passNum, Arrays.toString(result));
             passNum--;
         }
-        
         return result;
     }
 }

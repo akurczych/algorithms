@@ -5,7 +5,6 @@ import static java.lang.System.out;
 import java.util.Arrays;
 
 public class InsertionSort {
-
 	public static int[] sort(final int[] numbers) {
 		final var result = numbers.clone();
 		for (int index = 1; index < result.length; index++) {
@@ -20,5 +19,4 @@ public class InsertionSort {
 		}
 		return result;
 	}
-	
 }

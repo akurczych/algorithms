@@ -5,7 +5,6 @@ import static java.lang.System.out;
 import java.util.Arrays;
 
 public final class BubbleSort {
-
     public static int[] sort(final int[] numbers) {
     	out.format("numbers:   %s \n", Arrays.toString(numbers));
     	final int[] result = numbers.clone();
