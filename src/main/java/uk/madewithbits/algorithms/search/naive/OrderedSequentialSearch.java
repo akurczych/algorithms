@@ -5,7 +5,7 @@ import static java.lang.System.out;
 import java.util.Arrays;
 
 public class OrderedSequentialSearch {
-	public static boolean search(int number, int[] numbers) {
+	public static boolean search(final int number, final int[] numbers) {
 		out.format("searching for %d in %s\n", number, Arrays.toString(numbers));
 		int position = 0;
 		boolean found = false;
