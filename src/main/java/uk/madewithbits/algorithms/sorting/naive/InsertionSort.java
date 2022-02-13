@@ -6,8 +6,8 @@ import java.util.Arrays;
 
 public class InsertionSort {
 
-	public static int[] sort(int[] numbers) {
-		var result = numbers.clone();
+	public static int[] sort(final int[] numbers) {
+		final var result = numbers.clone();
 		for (int index = 1; index < result.length; index++) {
 			out.format("index: %d, result: %s \n", index, Arrays.toString(result));
 			int currentValue = result[index];

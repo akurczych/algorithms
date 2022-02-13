@@ -5,31 +5,22 @@ import static java.lang.System.out;
 import java.util.Arrays;
 
 public class SelectionSort {
-    
-    private final int[] numbers;
 
-    public SelectionSort(int[] numbers) {
-        this.numbers = numbers;
-        out.format("             numbers %s \n", Arrays.toString(numbers));
-    }
-
-    public void sort() {
+    public static int[] sort(final int[] numbers) {
+    	out.format("            numbers %s \n", Arrays.toString(numbers));
+    	final var result = numbers.clone();
         for(int fillSlot = numbers.length - 1; fillSlot > 0; fillSlot--) {
             int positionOfMax = 0;
             for(int location = 1; location <= fillSlot; location++) {
-                if(numbers[location] > numbers[positionOfMax]) {
+                if(result[location] > result[positionOfMax]) {
                     positionOfMax = location;
                 }
             }
-            moveMaxToFillSlot(fillSlot, positionOfMax);
-            out.format("fillSlot: %d, numbers %s \n", fillSlot, Arrays.toString(numbers));
+            int temp = result[fillSlot];
+            result[fillSlot] = result[positionOfMax];
+            result[positionOfMax] = temp;
+            out.format("fillSlot: %d, result %s \n", fillSlot, Arrays.toString(result));
         }
+        return result;
     }
-
-    private void moveMaxToFillSlot(final int fillSlot, final int positionOfMax) {
-        int temp = numbers[fillSlot];
-        numbers[fillSlot] = numbers[positionOfMax];
-        numbers[positionOfMax] = temp;
-    }
-
 }

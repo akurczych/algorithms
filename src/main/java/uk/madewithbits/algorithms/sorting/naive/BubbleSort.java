@@ -6,21 +6,19 @@ import java.util.Arrays;
 
 public final class BubbleSort {
 
-    public static void sort(int[] numbers) {
-        for (int passNum = numbers.length - 1; passNum > 0; passNum--) {
-            out.format("passNum: %d, array: %s \n", passNum, Arrays.toString(numbers));
+    public static int[] sort(final int[] numbers) {
+    	out.format("numbers:   %s \n", Arrays.toString(numbers));
+    	final int[] result = numbers.clone();
+        for (int passNum = result.length - 1; passNum > 0; passNum--) {
             for (int i = 0; i < passNum; i++) {
-                exchangeIfLargerThanNext(i, numbers);
+            	if (result[i] > result[i + 1]) {
+                    int temp = result[i];
+                    result[i] = result[i + 1];
+                    result[i + 1] = temp;
+                }
             }
+            out.format("passNum %d: %s \n", passNum, Arrays.toString(result));
         }
-        out.format("after       array: %s \n", Arrays.toString(numbers));
-    }
-    
-    private static void exchangeIfLargerThanNext(int i, int[] numbers) {
-        if (numbers[i] > numbers[i + 1]) {
-            int temp = numbers[i];
-            numbers[i] = numbers[i + 1];
-            numbers[i + 1] = temp;
-        }
+        return result;
     }
 }
