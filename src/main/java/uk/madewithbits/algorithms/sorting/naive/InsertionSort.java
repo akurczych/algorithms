@@ -19,4 +19,20 @@ public class InsertionSort {
 		}
 		return result;
 	}
+
+	public static void sortRecursively(final int[] numbers, final int startPosition) {
+		if(startPosition == 0) {
+			return;
+		} else {
+			sortRecursively(numbers, startPosition - 1);
+			out.format("startPosition: %d, numbers: %s \n", startPosition, Arrays.toString(numbers));
+			int currentValue = numbers[startPosition];
+			int position = startPosition;
+			while(position > 0 && numbers[position - 1] > currentValue) {
+				numbers[position] = numbers[position - 1];
+				position--;
+			}
+			numbers[position] = currentValue;
+		}
+	}
 }
