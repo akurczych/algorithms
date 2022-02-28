@@ -1,6 +1,7 @@
 package uk.madewithbits.algorithms.sorting.smart;
 
 import static java.lang.System.out;
+import static java.util.Arrays.copyOfRange;
 
 import java.util.Arrays;
 
@@ -10,8 +11,8 @@ public class MergeSort {
 		out.format("Splitting %s\n", Arrays.toString(numbers));
 		if(numbers.length > 1) {
 			final int midpoint = numbers.length / 2;
-			final int[] leftHalf = Arrays.copyOfRange(numbers, 0, midpoint);
-			final int[] rightHalf = Arrays.copyOfRange(numbers, midpoint, numbers.length);
+			final int[] leftHalf = copyOfRange(numbers, 0, midpoint);
+			final int[] rightHalf = copyOfRange(numbers, midpoint, numbers.length);
 			
 			sort(leftHalf);
 			sort(rightHalf);
