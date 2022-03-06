@@ -1,4 +1,4 @@
-package uk.madewithbits.algorithms.tree.aoa;
+package uk.madewithbits.algorithms.tree;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -19,9 +19,9 @@ class BinaryTreeTest {
 					.insertRight(new BinaryTree(5)
 						.insertLeft(new BinaryTree(6)));
 		
-		List<Integer> treeKeys = new ArrayList<>();
-		tree.preOrderTraversal(treeKeys);
-		assertThat(treeKeys).containsExactly(1, 2, 3, 4, 5, 6);
+		List<Integer> values = new ArrayList<>();
+		tree.preOrderTraversal(values);
+		assertThat(values).containsExactly(1, 2, 3, 4, 5, 6);
 	}
 	
 	@Test
@@ -34,9 +34,9 @@ class BinaryTreeTest {
 					.insertRight(new BinaryTree(6)
 						.insertLeft(new BinaryTree(5)));
 		
-		List<Integer> treeKeys = new ArrayList<>();
-		tree.inOrderTraversal(treeKeys);
-		assertThat(treeKeys).containsExactly(1, 2, 3, 4, 5, 6);
+		List<Integer> values = new ArrayList<>();
+		tree.inOrderTraversal(values);
+		assertThat(values).containsExactly(1, 2, 3, 4, 5, 6);
 	}
 	
 	@Test
@@ -49,9 +49,9 @@ class BinaryTreeTest {
 					.insertRight(new BinaryTree(5)
 						.insertLeft(new BinaryTree(4)));
 		
-		List<Integer> treeKeys = new ArrayList<>();
-		tree.postOrderTraversal(treeKeys);
-		assertThat(treeKeys).containsExactly(1, 2, 3, 4, 5, 6);
+		List<Integer> values = new ArrayList<>();
+		tree.postOrderTraversal(values);
+		assertThat(values).containsExactly(1, 2, 3, 4, 5, 6);
 	}
 
 }

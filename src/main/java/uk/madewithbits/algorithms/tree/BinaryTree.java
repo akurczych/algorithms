@@ -1,4 +1,4 @@
-package uk.madewithbits.algorithms.tree.aoa;
+package uk.madewithbits.algorithms.tree;
 
 import static java.util.Objects.nonNull;
 
@@ -11,15 +11,15 @@ public class BinaryTree {
 
 	@Getter
 	@Setter
-	private Integer key;
+	private Integer value;
 	
 	@Getter
 	private BinaryTree leftChild;
 	@Getter
 	private BinaryTree rightChild;
 	
-	public BinaryTree(Integer key) {
-		this.key = key;
+	public BinaryTree(Integer value) {
+		this.value = value;
 	}
 	
 	public BinaryTree insertLeft(final BinaryTree binaryTree) {
@@ -44,33 +44,33 @@ public class BinaryTree {
 		return this;
 	}
 	
-	public void preOrderTraversal(final List<Integer> keys) {
-		keys.add(key);
+	public void preOrderTraversal(final List<Integer> values) {
+		values.add(value);
 		if(nonNull(leftChild)) {
-			leftChild.preOrderTraversal(keys);
+			leftChild.preOrderTraversal(values);
 		}
 		if(nonNull(rightChild)) {
-			rightChild.preOrderTraversal(keys);
+			rightChild.preOrderTraversal(values);
 		}
 	}
 	
-	public void inOrderTraversal(final List<Integer> keys) {
+	public void inOrderTraversal(final List<Integer> values) {
 		if(nonNull(leftChild)) {
-			leftChild.inOrderTraversal(keys);
+			leftChild.inOrderTraversal(values);
 		}
-		keys.add(key);
+		values.add(value);
 		if(nonNull(rightChild)) {
-			rightChild.inOrderTraversal(keys);
+			rightChild.inOrderTraversal(values);
 		}
 	}
 	
-	public void postOrderTraversal(final List<Integer> keys) {
+	public void postOrderTraversal(final List<Integer> values) {
 		if(nonNull(leftChild)) {
-			leftChild.postOrderTraversal(keys);
+			leftChild.postOrderTraversal(values);
 		}
 		if(nonNull(rightChild)) {
-			rightChild.postOrderTraversal(keys);
+			rightChild.postOrderTraversal(values);
 		}
-		keys.add(key);
+		values.add(value);
 	}
 }
