@@ -15,6 +15,17 @@ public class BinaryHeap {
 		currentSize = 0;
 	}
 	
+	public BinaryHeap(final Integer[] someValues) {
+		values = Arrays.copyOf(someValues, someValues.length + 1);
+		values[values.length - 1] = 0;
+		swap(0, values.length - 1);
+		currentSize = values.length - 1;
+		for(int i = values.length / 2; i > 0; i--) {
+			moveDown(i);
+		}
+		out.format("values: %s\n", Arrays.toString(this.values));
+	}
+	
 	public Integer findMin() {
 		return values[1];
 	}
@@ -48,7 +59,6 @@ public class BinaryHeap {
 	private Integer findMinChildPosition(final Integer position) {
 		if(position * 2 + 1 <= currentSize && values[position * 2 + 1] < values[position * 2]) {
 			return position * 2 + 1;
-			
 		} else {
 			return position * 2;
 		}

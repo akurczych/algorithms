@@ -30,6 +30,12 @@ class BinaryHeapTest {
 		assertThat(heap.removeMin()).isEqualTo(27);
 		assertThat(heap.removeMin()).isEqualTo(33);
 	}
+	
+	@Test
+	void shouldBuildBinaryHeap() {
+		heap = new BinaryHeap(new Integer[] {19, 33, 11, 17, 5, 27, 21, 14, 18, 9});
+		assertThat(heap.findMin()).isEqualTo(5);
+	}
 
 	private void insertValues(final int[] values) {
 		for(int i = 0; i < values.length; i++) {
