@@ -52,7 +52,7 @@ public class BinaryHeap {
 			if(values[position] > values[minChildPosition]) {
 				swap(position, minChildPosition);
 			}
-			position = position * 2;
+			position = minChildPosition;
 		}
 	}
 
